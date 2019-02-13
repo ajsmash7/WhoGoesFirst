@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,104 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhoGoesFirst" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 1: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CR6-eX-yfD">
+                                <rect key="frame" x="6" y="35" width="63" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIn-78-nZ8">
+                                <rect key="frame" x="75" y="35" width="225" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="teamOneEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="4yk-Ce-2Xp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-pA-1Wn">
+                                <rect key="frame" x="77" y="80" width="221" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="teamTwoEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="JJd-lO-9XT"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-I4-UTi">
+                                <rect key="frame" x="115" y="138" width="145" height="30"/>
+                                <color key="backgroundColor" red="0.73575129530000005" green="0.73575129530000005" blue="0.73575129530000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select Random Team">
+                                    <color key="titleShadowColor" red="0.73575129533678751" green="0.73575129533678751" blue="0.73575129533678751" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWhoGoesFirst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhz-i9-88w"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Goes First?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5q-5G-x2B">
+                                <rect key="frame" x="94.5" y="196" width="185.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team 2: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCH-gA-7e6">
+                                <rect key="frame" x="6" y="81" width="65" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99388196215542612" blue="0.67387504686711952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qIn-78-nZ8" firstAttribute="leading" secondItem="CR6-eX-yfD" secondAttribute="trailing" constant="6" id="0mo-ik-Vex"/>
+                            <constraint firstItem="Rpb-I4-UTi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1M9-Ci-0IU"/>
+                            <constraint firstItem="fCH-gA-7e6" firstAttribute="top" secondItem="CR6-eX-yfD" secondAttribute="bottom" constant="15" id="1gK-9n-8QD"/>
+                            <constraint firstItem="F5q-5G-x2B" firstAttribute="centerX" secondItem="Rpb-I4-UTi" secondAttribute="centerX" id="2Cn-1h-oSK"/>
+                            <constraint firstItem="6bC-pA-1Wn" firstAttribute="centerY" secondItem="fCH-gA-7e6" secondAttribute="centerY" id="4oS-qw-yAP"/>
+                            <constraint firstItem="fCH-gA-7e6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="5Zu-nP-bfD"/>
+                            <constraint firstItem="Rpb-I4-UTi" firstAttribute="centerX" secondItem="6bC-pA-1Wn" secondAttribute="centerX" id="8Aa-N6-8pQ"/>
+                            <constraint firstItem="qIn-78-nZ8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="8iU-HF-Afz"/>
+                            <constraint firstItem="CR6-eX-yfD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="AkG-4p-yJB"/>
+                            <constraint firstItem="qIn-78-nZ8" firstAttribute="centerY" secondItem="CR6-eX-yfD" secondAttribute="centerY" id="DnZ-Ab-pRz"/>
+                            <constraint firstItem="qIn-78-nZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gax-UD-vn5"/>
+                            <constraint firstItem="6bC-pA-1Wn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kzz-cE-p4C"/>
+                            <constraint firstItem="6bC-pA-1Wn" firstAttribute="leading" secondItem="fCH-gA-7e6" secondAttribute="trailing" constant="6" id="Lyg-GY-meu"/>
+                            <constraint firstItem="6bC-pA-1Wn" firstAttribute="top" secondItem="qIn-78-nZ8" secondAttribute="bottom" constant="15" id="Pp0-6r-54v"/>
+                            <constraint firstItem="F5q-5G-x2B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SVN-vw-le4"/>
+                            <constraint firstItem="6bC-pA-1Wn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WbH-hB-vBN"/>
+                            <constraint firstItem="CR6-eX-yfD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="WdX-ag-Kb4"/>
+                            <constraint firstItem="qIn-78-nZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZDQ-Gn-GMH"/>
+                            <constraint firstItem="Rpb-I4-UTi" firstAttribute="top" secondItem="6bC-pA-1Wn" secondAttribute="bottom" constant="28" id="Zs4-oE-g4z"/>
+                            <constraint firstItem="Rpb-I4-UTi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nT2-UI-l2v"/>
+                            <constraint firstItem="F5q-5G-x2B" firstAttribute="top" secondItem="Rpb-I4-UTi" secondAttribute="bottom" constant="28" id="sJV-lN-Ly2"/>
+                            <constraint firstItem="F5q-5G-x2B" firstAttribute="centerX" secondItem="Rpb-I4-UTi" secondAttribute="centerX" id="yht-MS-cW1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6pU-cu-Xdc" appends="YES" id="EcP-sw-BaE"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="buttonLabel" destination="Rpb-I4-UTi" id="0DH-7J-GlN"/>
+                        <outlet property="teamOne" destination="qIn-78-nZ8" id="Dgd-n0-VId"/>
+                        <outlet property="teamTwo" destination="6bC-pA-1Wn" id="1O7-jC-vRj"/>
+                        <outlet property="winnerLabel" destination="F5q-5G-x2B" id="cxf-6E-MZJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6pU-cu-Xdc">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="QU9-ul-HrZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
