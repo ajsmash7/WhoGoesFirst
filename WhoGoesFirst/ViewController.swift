@@ -23,21 +23,35 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //I could not get the app to work with enabling and disabling the button.
-        //buttonLabel.isUserInteractionEnabled = false
-        //buttonLabel.setTitle("Enter Both Team Names", for: .disabled)
+        //buttonLabel.isUserInteractionEnabled = false   // this is not the same thing as enabled/disabled - the button will still be clickable but the events from it will be ignored.
+        buttonLabel.setTitle("Enter Both Team Names", for: .disabled)
+        buttonLabel.isEnabled = false
     }
     
     @IBAction func teamOneEditingChanged(_ textField: UITextField){
         if let text = textField.text, !text.isEmpty{
-            
             isTeamOne = textField.text
         }
+        shouldEnableButton()
     }
     
     
     @IBAction func teamTwoEditingChanged(_ textField: UITextField){
         if let text = textField.text, !text.isEmpty{
             isTeamTwo = textField.text
+        }
+        shouldEnableButton()
+    }
+    
+    // this could possibly have a better name 
+    func shouldEnableButton() {
+        print("enable \(isTeamOne) \(isTeamTwo)")
+        if let t1 = teamOne.text, let t2 = teamTwo.text {
+            if t1.count > 0 && t2.count > 0 {
+                buttonLabel.isEnabled = true
+            } else {
+                buttonLabel.isEnabled = false
+            }
         }
     }
     //I originally had isTeamOne, isTeamTwo set as bool vars, but could not get button enable/disable to work
